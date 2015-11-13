@@ -60,3 +60,16 @@
 .form-item.webform-component select#edit-submitted-experiencia-profesional-experiencia{
 	width: 80%;
 }
+
+#first-time{
+	display: none;
+}
+
+#block-social-media-links-social-media-links,
+#block-block-10{
+	float: right;
+}
+
+#block-block-10{
+	margin-top: 8px;
+}
