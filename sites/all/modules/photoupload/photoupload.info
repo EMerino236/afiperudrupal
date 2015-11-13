@@ -1,5 +1,5 @@
 name = Photo upload
-description = Module that manages photo uploads from Android devices
+description = Module that manages photo uploads to the gallery
 
 core = "7.x"
 version = "7.x-1.0"
