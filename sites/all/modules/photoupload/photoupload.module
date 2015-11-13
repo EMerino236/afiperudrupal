@@ -1,0 +1,63 @@
+<?php
+
+function photoupload_menu() 
+{
+    $items['photoupload'] = array(
+        'page callback' => 'photoupload_upload_file_submit',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function photoupload_upload_file_submit() 
+{
+    if (!isset($_FILES) || empty($_FILES) || $_FILES['image']['size'] == 0) 
+    {
+        //drupal_set_message("Your file doesn't appear to be here.");
+        return drupal_json_output(['error' => 'No se encontró el archivo PERRA.']);
+    }
+    $name = $_FILES['image']['name'];
+    $size = $_FILES['image']['size'];
+    $type = $_FILES['image']['type'];
+    $tmp_name = $_FILES['image']['tmp_name'];
+    $error = $_FILES['image']['error'];
+    
+    $_FILES['files'] = [];
+    
+    $_FILES['files']['name'] = [];
+    $_FILES['files']['size'] = [];
+    $_FILES['files']['type'] = [];
+    $_FILES['files']['tmp_name'] = [];
+    $_FILES['files']['error'] = [];
+    
+    $_FILES['files']['name']['image'] = $name;
+    $_FILES['files']['size']['image'] = $size;
+    $_FILES['files']['type']['image'] = $type;
+    $_FILES['files']['tmp_name']['image'] = $tmp_name;
+    $_FILES['files']['error']['image'] = $error;
+    
+    // this is the actual place where we store the file
+    $dir = 'private://' . 'galeria_fotos';
+    $file = file_save_upload('image', array(), $dir);
+    if ($file) 
+    {
+        $file->status = FILE_STATUS_PERMANENT;
+        $file_permanent = file_save($file);
+        
+        // get Gallery nid
+        $nid = 10;
+        // load node by nid
+        $node = node_load($nid);
+        // attach file to node
+        $node->field_galeria[LANGUAGE_NONE][] = (array)$file_permanent;
+        // and finally, save node
+        node_save($node);
+        
+        return drupal_json_output(['success' => 1]);
+    }
+    else 
+    {
+        return drupal_json_output(['error' => 'Error al subir el archivo']);
+    }
+}
