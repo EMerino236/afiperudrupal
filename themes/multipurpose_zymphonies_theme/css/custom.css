@@ -1,3 +1,62 @@
 .view-noticias .views-row{
   
 }
+
+.slideshow .menu-wrap {
+    background-color: #0099cc;
+}
+
+.leaf  :hover {
+    background-color: #F0FFFF;
+ }
+
+
+.block-social-media-links-social-media-links{
+	float: right;
+}
+
+.credits{
+	display:none;
+}
+
+.flex-direction-nav a{
+	height: 52px;
+}
+
+.cup{
+	height: 30px;
+	width: 30px;
+	background-size: 30px 30px;
+	background-image:url('../images/cup.ico');
+	float: left;
+}
+.star{
+	height: 30px;
+	width: 30px;
+	background-size: 30px 30px;
+	background-image:url('../images/star.ico');
+	float: left;
+}
+.check{
+	height: 30px;
+	width: 30px;
+	background-size: 30px 30px;
+	background-image:url('../images/check.ico');
+	float: left;
+}
+
+.form-item.webform-component{
+    width: 50%;
+    float: left;
+}
+
+.form-item.webform-component textarea{
+	resize: none;
+}
+
+.form-item.webform-component input[type=text],
+.form-item.webform-component input[type=email],
+.form-item.webform-component textarea,
+.form-item.webform-component select#edit-submitted-experiencia-profesional-experiencia{
+	width: 80%;
+}
