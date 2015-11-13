@@ -15,7 +15,7 @@ function photoupload_upload_file_submit()
     if (!isset($_FILES) || empty($_FILES) || $_FILES['image']['size'] == 0) 
     {
         //drupal_set_message("Your file doesn't appear to be here.");
-        return drupal_json_output(['error' => 'No se encontró el archivo PERRA.']);
+        return drupal_json_output(['error' => 'No se encontró el archivo.']);
     }
     $name = $_FILES['image']['name'];
     $size = $_FILES['image']['size'];
