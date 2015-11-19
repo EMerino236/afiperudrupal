@@ -1,0 +1,7 @@
+name = WS Noticias
+description = Module that creates a web service to get news
+
+core = "7.x"
+version = "7.x-1.0"
+
+project = "ws_noticias"

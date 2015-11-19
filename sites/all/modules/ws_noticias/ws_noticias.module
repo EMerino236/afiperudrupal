@@ -1,0 +1,30 @@
+<?php
+
+function ws_noticias_menu() 
+{
+    $items['api/v1/articles'] = array(
+        'page callback' => 'get_news',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function get_news()
+{
+    $result = db_query("SELECT n.nid, n.created FROM {node} n WHERE n.type = :type", array(':type' => 'noticia'));
+    $response = [];
+    foreach($result as $record)
+    {
+        $node = node_load($record->nid);
+        $response[] = [
+            'id' => $record->nid,
+            'title' => $node->title,
+            'content' => $node->field_contenidonoticia[LANGUAGE_NONE][0]['value'],
+            'post_date' => (int)$record->created,
+            'image_url' => image_style_url('large', $node->field_fotos[LANGUAGE_NONE][0]['uri'])
+        ];
+    }
+    return drupal_json_output($response);
+    
+}
