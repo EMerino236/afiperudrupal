@@ -97,7 +97,7 @@
 	    display: block;
 	}
 
-	.view-noticias .view-content .views-row .views-field-field-fotos img{
+	.view-noticias .view-content .views-row .views-field-field-fotos .field-content a img{
 		width: 100%;
 	}
 }
