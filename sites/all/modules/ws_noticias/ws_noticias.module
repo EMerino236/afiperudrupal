@@ -20,7 +20,7 @@ function get_news()
         $response[] = [
             'id' => $record->nid,
             'title' => $node->title,
-            'content' => $node->field_contenidonoticia[LANGUAGE_NONE][0]['value'],
+            'content' => strip_tags($node->field_contenidonoticia[LANGUAGE_NONE][0]['value']),
             'post_date' => (int)$record->created,
             'image_url' => image_style_url('large', $node->field_fotos[LANGUAGE_NONE][0]['uri'])
         ];
