@@ -1,7 +1,3 @@
-.view-noticias .views-row{
-  
-}
-
 .slideshow .menu-wrap {
     background-color: #0099cc;
 }
@@ -54,6 +50,7 @@
 	resize: none;
 }
 
+.webform-component-textarea .grippie,
 .form-item.webform-component input[type=text],
 .form-item.webform-component input[type=email],
 .form-item.webform-component textarea,
@@ -76,4 +73,15 @@
 
 .form-actions{
 	 width: 50%;
+}
+
+.view-noticias .view-content .views-row{
+
+}
+
+@media only screen and (max-width: 768px) {
+	.form-item.webform-component{
+	    width: 100%;
+	    float: left;
+	}
 }
