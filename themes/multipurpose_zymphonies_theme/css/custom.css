@@ -84,10 +84,6 @@
 	margin: 0 2% 0 2%;
 }
 
-.view-noticias .view-content .views-row-even{
-	margin: 0 1% 0 1%;
-}
-
 @media only screen and (max-width: 768px) {
 	.form-item.webform-component{
 	    width: 100%;
@@ -96,7 +92,12 @@
 
 
 	.view-noticias .view-content .views-row{
-	    width: 100%;
+	    width: 60%;
+	    margin: 0 20% 0 20%;
 	    display: block;
+	}
+
+	.view-noticias .view-content .views-row .views-field-fotos img{
+		width: 100%;
 	}
 }
