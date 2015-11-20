@@ -76,12 +76,27 @@
 }
 
 .view-noticias .view-content .views-row{
+    width: 30%;
+    display: inline-block;
+}
 
+.view-noticias .view-content .views-row-odd{
+	margin: 0 2% 0 2%;
+}
+
+.view-noticias .view-content .views-row-even{
+	margin: 0 1% 0 1%;
 }
 
 @media only screen and (max-width: 768px) {
 	.form-item.webform-component{
 	    width: 100%;
 	    float: left;
+	}
+
+
+	.view-noticias .view-content .views-row{
+	    width: 100%;
+	    display: block;
 	}
 }
