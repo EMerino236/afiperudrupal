@@ -138,6 +138,9 @@
 	    float: left;
 	}
 
+	.block > h2{
+		text-align: center;
+	}
 
 	.view-noticias .view-content .views-row{
 	    width: 60%;
