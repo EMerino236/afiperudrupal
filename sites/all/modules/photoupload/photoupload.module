@@ -51,6 +51,7 @@ function photoupload_upload_file_submit()
         $node = node_load($nid);
         // attach file to node
         $node->field_galeria[LANGUAGE_NONE][] = (array)$file_permanent;
+		$node->status = 0;
         // and finally, save node
         node_save($node);
         
