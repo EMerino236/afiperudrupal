@@ -75,6 +75,7 @@
 	 width: 50%;
 }
 
+.view-noticias-full-view .view-content .views-row,
 .view-noticias .view-content .views-row{
     width: 30%;
     display: inline-block;
@@ -142,12 +143,14 @@
 		text-align: center;
 	}
 
+	.view-noticias-full-view .view-content .views-row,
 	.view-noticias .view-content .views-row{
 	    width: 60%;
 	    margin: 0 20% 0 20%;
 	    display: block;
 	}
 
+	.view-noticias-full-view .view-content .views-row .views-field-field-fotos .field-content a img,
 	.view-noticias .view-content .views-row .views-field-field-fotos .field-content a img{
 		width: 100%;
 	}
